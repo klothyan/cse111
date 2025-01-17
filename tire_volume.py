@@ -24,14 +24,13 @@ if buy.lower() == "y":
 
 if buy.lower() == "n":
     annoying = input("Are you sure you DON'T want to order this limited time deal? (Y/N)")
-    if annoying.lower() == "n":
-        print("Thanks for changing your mind! Your tires have been ordered.")
-        address = input("Please type your address here so we can deliver them to your house: ")
-    print(f"Your address is {address}. Thank you for shopping with us! Have a good day!")
-
     if annoying.lower() == "y":
         address = input("Please type your address here so we can get to your house: ")
-        print(f"Your address is {address}. Have a bad day.")
+        print(f"Your address is {address}. Have a bad day.") 
+if annoying.lower() == "n":
+    print("Thanks for changing your mind! Your tires have been ordered.")
+    address = input("Please type your address here so we can deliver them to your house: ")
+    print(f"Your address is {address}. Thank you for shopping with us! Have a good day!")
 
 
 
