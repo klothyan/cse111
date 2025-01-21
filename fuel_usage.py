@@ -1,3 +1,4 @@
+import math
 def main():
     miles = float(input("Enter the first odometer reading in miles: "))
     miles2 = float(input("Enter the 2nd odometer reading in miles: "))
