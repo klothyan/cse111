@@ -1,6 +1,6 @@
 import random
 
-welcome = input("Hello and welcome to the random sentence generator! Type your name here to get started: ")
+name = input("Hello and welcome to the random sentence generator! Type your name here to get started: ")
 
 def main():
     words = ["bird", "boy", "girl", "mouse", "cheese", "house"]
@@ -11,8 +11,8 @@ def main():
 
     cap_word = word.capitalize()
 
-    def get_determiner(quantity):
-        if quantity == 1:
+    def get_determiner(determiner):
+        if determiner == 1:
             words = ["a", "one", "the"]
         else:
             words = ["some", "many", "the"]
@@ -20,13 +20,13 @@ def main():
         word = random.choice(words)
         return word
 
-    def get_noun(quantity):
-        if quantity == 1:
+    def get_noun(noun):
+        if noun == 1:
             words = ["bird", "boy", "girl", "mouse", "cheese", "house"]
         else:
             words = ["birds", "boys", "girls", "mice", "cheeses", "houses"]
-    def get_verb(quantity, tense):
-        if quantity == 1:
+    def get_verb(verb, tense):
+        if verb == 1:
             words = ["runs", "jumps", "walks", "eats", "laughs", "dances"]
         else:
             words = ["ran", "jumped", "walked", "ate", "laughed","danced"]
@@ -36,9 +36,9 @@ def main():
         tense = "past"
         make_sentence = (f"{get_determiner} {get_noun} {get_verb}.")
         return make_sentence
-    print(make_sentence(1))
+    print(f"{make_sentence} {1}")
 
-print(f"Hello {welcome}, here are your random sentences generated below: ")
+print(f"Hello {name}, here are your random sentences generated below: ")
 
 
 
