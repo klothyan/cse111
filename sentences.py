@@ -1,60 +1,44 @@
 import random
 
-name = input("Hello and welcome to the random sentence generator! Type your name here to get started: ")
+def get_determiner(quantity):
+    if quantity == 1:
+        determiners = ["a", "one", "the"]
+    else:
+        determiners = ["some", "many", "the"]
+    
+    return random.choice(determiners)
+
+def get_noun(quantity):
+    if quantity == 1:
+        nouns = ["bird", "boy", "girl", "mouse", "cheese", "house"]
+    else:
+        nouns = ["birds", "boys", "girls", "mice", "cheeses", "houses"]
+    
+    return random.choice(nouns)
+
+def get_verb(tense):
+    if tense == "present":
+        verbs = ["runs", "jumps", "walks", "eats", "laughs", "dances"]
+    else:
+        verbs = ["ran", "jumped", "walked", "ate", "laughed", "danced"]
+    
+    return random.choice(verbs)
+
+def make_sentence(quantity, tense):
+    determiner = get_determiner(quantity)
+    noun = get_noun(quantity)
+    verb = get_verb(tense)
+    
+    sentence = f"{determiner.capitalize()} {noun} {verb}."
+    return sentence
 
 def main():
-    words = ["bird", "boy", "girl", "mouse", "cheese", "house"]
-
-    word = random.choice(words)
-
-    word = "horse"
-
-    cap_word = word.capitalize()
-
-    def get_determiner(determiner):
-        if determiner == 1:
-            words = ["a", "one", "the"]
-        else:
-            words = ["some", "many", "the"]
-
-        word = random.choice(words)
-        return word
-
-    def get_noun(noun):
-        if noun == 1:
-            words = ["bird", "boy", "girl", "mouse", "cheese", "house"]
-        else:
-            words = ["birds", "boys", "girls", "mice", "cheeses", "houses"]
-    def get_verb(verb, tense):
-        if verb == 1:
-            words = ["runs", "jumps", "walks", "eats", "laughs", "dances"]
-        else:
-            words = ["ran", "jumped", "walked", "ate", "laughed","danced"]
-
-    def make_sentence(quantity, tense):
-        quantity = 1
-        tense = "past"
-        make_sentence = (f"{get_determiner} {get_noun} {get_verb}.")
-        return make_sentence
-    print(f"{make_sentence} {1}")
-
-print(f"Hello {name}, here are your random sentences generated below: ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    for _ in range(6):
+        quantity = random.choice([1, 2])
+        tense = random.choice(["present", "past", "future"])
+        
+       
+        sentence = make_sentence(quantity, tense)
+        print(sentence)
 
 main()
