@@ -30,10 +30,6 @@ def get_preposition():
     prepositions = ["in", "on", "at", "with", "under", "above", "after", "before"]
     return random.choice(prepositions)
 
-def get_conjunction():
-    conjunctions = ["and", "but", "or", "so", "yet"]
-    return random.choice(conjunctions)
-
 def get_prepositional_phrase(quantity):
     preposition = get_preposition()
     determiner = get_determiner(quantity)
@@ -45,15 +41,9 @@ def make_sentence(quantity, tense):
     determiner = get_determiner(quantity)
     noun = get_noun(quantity)
     verb = get_verb(tense)
-    conjunction = get_conjunction()
     prepositional_phrase = get_prepositional_phrase(quantity)
-
-    if random.choice([True, False]):
-        sentence = f"{determiner.capitalize()} {noun} {verb} {prepositional_phrase} {conjunction} {get_determiner(quantity)} {get_noun(quantity)} {verb} {prepositional_phrase}."
-    else:
-        sentence = f"{determiner.capitalize()} {noun} {verb} {conjunction} {verb} {prepositional_phrase}."
     
-    sentence = f"{determiner.capitalize()} {noun} {verb} {conjunction} {verb} {prepositional_phrase}."
+    sentence = f"{determiner.capitalize()} {noun} {verb} {prepositional_phrase}."
     return sentence
 
 def main():
