@@ -30,6 +30,10 @@ def get_preposition():
     prepositions = ["in", "on", "at", "with", "under", "above", "after", "before"]
     return random.choice(prepositions)
 
+def get_place():
+    places = ["the park", "the school", "the kitchen", "the street", "the beach", "the forest"]
+    return random.choice(places)
+
 def get_prepositional_phrase(quantity):
     preposition = get_preposition()
     determiner = get_determiner(quantity)
@@ -42,8 +46,9 @@ def make_sentence(quantity, tense):
     noun = get_noun(quantity)
     verb = get_verb(tense)
     prepositional_phrase = get_prepositional_phrase(quantity)
+    place = get_place()
     
-    sentence = f"{determiner.capitalize()} {noun} {verb} {prepositional_phrase}."
+    sentence = f"{determiner.capitalize()} {noun} {verb} {place} {prepositional_phrase}."
     return sentence
 
 def main():
