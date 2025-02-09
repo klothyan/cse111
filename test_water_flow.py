@@ -19,27 +19,14 @@ if __name__ == "__main__":
     total_height = water_column_height(tower_height, tank_height)
     print(f"The height of the water column is {total_height} meters.")
 
+# Test cases
 def test_water_column_height():
-    """
-    Test the water_column_height function with multiple test cases.
-    """
-    water_column_height(0, 0)
-    water_column_height(0, 10)
-    water_column_height(25, 0)
-    water_column_height(48.3, 12.8)
+    assert water_column_height(0, 0) == 0
+    assert water_column_height(0, 10) == 7.5
+    assert water_column_height(25, 0) == 25
+    assert water_column_height(48.3, 12.8) == approx(57.9, 0.01)
 
 def test_pressure_gain_from_water_height():
-    """
-    Test the pressure_gain_from_water_height function with multiple test cases.
-    """
-    assert abs(pressure_gain_from_water_height(0) - 0) < 0.001
-    assert abs(pressure_gain_from_water_height(30.2) - 295.628) < 0.001
-    assert abs(pressure_gain_from_water_height(50) - 489.450) < 0.001
-
-
-# Run tests
-if __name__ == "__main__":
-    test_water_column_height()
-    test_pressure_gain_from_water_height()
-
-
+    assert pressure_gain_from_water_height(0) == approx(0, 0.001)
+    assert pressure_gain_from_water_height(30.2) == approx(295.628, 0.001)
+    assert pressure_gain_from_water_height(50) == approx(489.450, 0.001)
