@@ -4,7 +4,7 @@ from datetime import datetime
 
 def get_weather_data():
     """Fetch 5-day weather forecast for Rexburg, Idaho using urllib."""
-    api_key = "d6571c0e55ad5107d043260f161d8419"  # Replace with your actual API key
+    api_key = "d6571c0e55ad5107d043260f161d8419"
     url = f"https://api.openweathermap.org/data/2.5/forecast?q=Rexburg&appid={api_key}&units=imperial"
 
     try:
@@ -70,7 +70,7 @@ def display_forecast(data):
         print(f"Date: {date}")
         daily_temps = [temp for _, temp, _, _ in forecasts]
         avg_temp = sum(daily_temps) / len(daily_temps)
-        main_weather = forecasts[0][3]  # Get the first weather condition of the day
+        main_weather = forecasts[0][3]
         condition, outfit = analyze_weather(avg_temp, main_weather)
         color_tip = suggest_color(condition)
         
